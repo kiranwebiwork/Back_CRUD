@@ -44,9 +44,9 @@ export default function SignupScreen() {
                     <div className="col-md-6" style={{ paddingTop: "20px", marginTop: "30px", display: "flex", justifyContent: "center", flexDirection: "column" }}>
                         <h3 className="text-center">Photo Or Title</h3>
                     </div>
-                    <div className="col-md-6" style={{ paddingTop: "20px", marginTop: "30px", display: "flex", justifyContent: "center", flexDirection: "column" }}>
-                        <h3 className="" style={{ paddingLeft: "140px" }}   >Sign-up</h3>
-                        <form style={{ width: "400px" }} >
+                    <div className="col-md-6" style={{ paddingTop: "20px", marginTop: "30px", display: "flex", justifyContent: "center",alignItems:"center" ,  flexDirection: "column" }}>
+                        <h3 className="" style={{ paddingLeft: "10px" }}   >Sign-up</h3>
+                        <form style={{ width: "400px",  }}  >
                              <div className="form-group " style={{ marginTop: "15px" }} >
                                 <label for="exampleInputPassword1">Id</label>
                                 <input type="text" name="id"  className="form-control" value={userRegistration.id} onChange={handlechange}  id="exampleInputPassword1" placeholder="Id" />
@@ -70,6 +70,9 @@ export default function SignupScreen() {
                             {/* <Link to="/login"   > */}
                                 <button type="submit" onClick={(e)=>Registration(e, userRegistration)} className="btn btn-primary" style={{ marginTop: "15px" }}>Submit</button>
                             {/* </Link> */}
+                            <Link to="/login">
+                            <button>Login</button>
+                            </Link>
                         </form>
                     </div>
                 </div>

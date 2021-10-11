@@ -2,6 +2,7 @@ import React  , { useState , useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useHistory} from 'react-router-dom' 
+import HomeScreen from './HomeScreen';
 export default function LoginScreen() {
      const [login, setlogin] = useState({ 
         Email:"",
@@ -27,8 +28,11 @@ export default function LoginScreen() {
             axios.post("http://localhost:4200/api/user/login" , logindata)
             .then(response =>{
                 // setuserexits(response.data.response)
-                if (response.data.response) {
+                localStorage.setItem("usertoken" ,response.data.token )
+                console.log("response.data.response",response.data.token)
+                if (response.data.token) {
                     history.push("/home")  
+                    // <HomeScreen   />
                                
                 }else{
                     history.push("/login");
